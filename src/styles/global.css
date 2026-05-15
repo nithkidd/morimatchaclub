@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fff9ef;
+  --surface: #f4ecdc;
+  --surface-soft: #ebe4d2;
+  --ink: #0c3f1a;
+  --ink-soft: #3f5f41;
+  --line: #d4c8af;
+  --line-strong: #94a984;
+
+  --brand-900: #05330d;
+  --brand-700: #1f5825;
+  --brand-500: #3a6d2d;
+  --brand-300: #bfd3ab;
+  --brand-100: #e4edd8;
+
+  --footer-bg: #0c3b16;
+  --footer-text: #f5f6ef;
+  --footer-muted: #c9d5c0;
+  --footer-line: #345b34;
+
+  --intro-text: #05330d;
+  --intro-muted: #4a6a44;
+}
+
+html {
+  font-family: "Jost", "Segoe UI", "Helvetica Neue", sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.03em;
+}
+
+.brand-logo {
+  font-family: "MuseoModerno", "Jost", sans-serif;
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--brand-100);
+  color: var(--brand-900);
+}
+
+.aura-intro-bg {
+  background:
+    radial-gradient(42% 34% at 50% 12%, rgba(214, 204, 182, 0.34), rgba(214, 204, 182, 0) 76%),
+    radial-gradient(32% 28% at 12% 18%, rgba(202, 194, 175, 0.24), rgba(202, 194, 175, 0) 84%),
+    radial-gradient(32% 28% at 88% 16%, rgba(208, 199, 180, 0.24), rgba(208, 199, 180, 0) 84%),
+    linear-gradient(180deg, #fffdf8 0%, #fff9ef 58%, #f8f0e0 100%);
+  animation: intro-breathe 14s ease-in-out infinite alternate;
+}
+
+.soft-section-wash {
+  position: relative;
+  overflow: hidden;
+}
+
+.soft-section-wash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(34% 54% at 10% 0%, rgba(206, 197, 176, 0.22), transparent 70%),
+    radial-gradient(40% 50% at 90% 100%, rgba(196, 188, 167, 0.2), transparent 72%);
+  animation: wash-drift 18s ease-in-out infinite alternate;
+}
+
+.motion-image {
+  transform: none;
+  transition: none;
+}
+
+.brand-cta {
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.brand-cta:hover {
+  background-color: var(--brand-700);
+}
+
+@keyframes intro-breathe {
+  0% {
+    background-position:
+      50% 12%,
+      12% 18%,
+      88% 16%,
+      50% 0%;
+  }
+  100% {
+    background-position:
+      50% 8%,
+      9% 22%,
+      91% 19%,
+      50% 100%;
+  }
+}
+
+@keyframes wash-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, -8px, 0) scale(1.01);
+  }
+}
+
+.testimonial-track {
+  animation: rail-scroll 52s linear infinite;
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rail-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonial-track {
+    animation-duration: 60s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    animation: none;
+  }
+
+  .motion-image,
+  .brand-cta,
+  .brand-cta:hover,
+  .soft-section-wash::before,
+  .aura-intro-bg {
+    transition: none;
+    transform: none;
+    animation: none;
+  }
+}
