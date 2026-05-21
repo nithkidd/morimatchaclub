@@ -160,7 +160,7 @@ export const introSequenceContent: IntroSequenceContent = {
   logoSrc: "/LOGO/morimatchalogo-mark.png",
   logoAlt: "Mori Matcha Club logo",
   brandWordmark: "MORI MATCHA CLUB",
-  tagline: "Ceromonial Matcha",
+  tagline: "Ceremonial Matcha",
   lines: [
     "One craft. One grade. One ritual.",
     "Shade-grown leaves, stone-milled in small batches.",
@@ -169,9 +169,9 @@ export const introSequenceContent: IntroSequenceContent = {
 };
 
 export const heroContent: HeroContent = {
-  eyebrow: "Ceromonial Matcha Only",
+  eyebrow: "Ceremonial Matcha Only",
   headline: "Purposefully crafted matcha for calm, clean focus.",
-  copy: "Mori Matcha Club serves one product only: premium ceromonial matcha designed for daily ritual and uncompromised quality.",
+  copy: "Mori Matcha Club serves one product only: premium ceremonial matcha designed for daily ritual and uncompromised quality.",
   ctaLabel: "Order Now",
   ctaHref: "https://www.instagram.com/morimatcha.club/",
   heroImage: {
@@ -183,7 +183,7 @@ export const heroContent: HeroContent = {
 export const whyUsContent: WhyUsContent = {
   eyebrow: "Why us?",
   headline: "What makes us different from the rest",
-  copy: "Everything is built around ceromonial grade discipline: source, mill, freshness, and serving ritual.",
+  copy: "Everything is built around ceremonial grade discipline: source, mill, freshness, and serving ritual.",
   image: {
     src: "/WHYUS/whyus1.jpg",
     alt: "Bamboo whisk preparing bright green matcha",
@@ -192,7 +192,7 @@ export const whyUsContent: WhyUsContent = {
   ctaHref: "#order",
   items: [
     {
-      title: "Ceromonial-grade quality",
+      title: "Ceremonial-grade quality",
       copy: "First-flush tencha leaves only, selected for clean umami and natural sweetness.",
     },
     {
@@ -209,7 +209,7 @@ export const whyUsContent: WhyUsContent = {
 export const experienceContent: ExperienceContent = {
   eyebrow: "The natural difference",
   headline: "Experience the power of pure matcha",
-  copy: "No flavor blends. No culinary substitutes. Just ceromonial matcha meant to be enjoyed as-is.",
+  copy: "No flavor blends. No culinary substitutes. Just ceremonial matcha meant to be enjoyed as-is.",
   ctaLabel: "",
   ctaHref: "#order",
   mainImage: {
@@ -248,7 +248,7 @@ export const originTrustContent: OriginTrustContent = {
 
 export const ingredientsContent: IngredientsContent = {
   eyebrow: "Our process",
-  headline: "Meet the essentials behind every ceromonial cup",
+  headline: "Meet the essentials behind every ceremonial cup",
   ctaLabel: "",
   ctaHref: "#order",
   image: {
@@ -269,7 +269,7 @@ export const ingredientsContent: IngredientsContent = {
       copy: "Packed in tight runs to keep aroma fresh and flavor stable from tin to cup.",
     },
     {
-      title: "Ceromonial focus",
+      title: "Ceremonial focus",
       copy: "We sell one product category only, so every decision serves that standard.",
     },
   ],
@@ -278,7 +278,7 @@ export const ingredientsContent: IngredientsContent = {
 export const contactBandContent: ContactBandContent = {
   eyebrow: "Get in touch",
   headline: "Elevate your daily matcha ritual",
-  copy: "Questions about whisking, ratios, or flavor profile? We are here to guide your ceromonial matcha journey.",
+  copy: "Questions about whisking, ratios, or flavor profile? We are here to guide your ceremonial matcha journey.",
   ctaLabel: "",
   ctaHref: "#order",
   socials: [
@@ -318,7 +318,7 @@ export const quoteItems: QuoteItem[] = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
   },
   {
-    quote: "Ceromonial quality is obvious from color, aroma, and texture.",
+    quote: "Ceremonial quality is obvious from color, aroma, and texture.",
     name: "Nika Sato",
     handle: "@nikasato",
     avatar:
@@ -366,7 +366,7 @@ export const followContent: FollowContent = {
 export const footerContent: FooterContent = {
   darkPanelTitle: "Mori Matcha Club",
   darkPanelCopy:
-    "Ceromonial-grade matcha for modern ritual and purposeful focus.",
+    "Ceremonial-grade matcha for modern ritual and purposeful focus.",
   darkPanelImageA:
     "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=700&q=80",
   darkPanelImageB:
