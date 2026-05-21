@@ -153,6 +153,7 @@ export interface FooterContent {
     href: string;
   }>;
   legalLine: string;
+  creditLine: string;
 }
 
 export const introSequenceContent: IntroSequenceContent = {
@@ -395,4 +396,5 @@ export const footerContent: FooterContent = {
     },
   ],
   legalLine: "Copyright 2026 Mori Matcha Club. All rights reserved.",
+  creditLine: "Powered By SAYANA",
 };

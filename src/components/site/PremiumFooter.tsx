@@ -120,8 +120,11 @@ export default function PremiumFooter({ content }: PremiumFooterProps) {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[1240px] border-t border-[var(--footer-line)] px-6 py-5 text-sm text-[var(--footer-muted)] lg:px-10">
-        {content.legalLine}
+      <div className="mx-auto flex w-full max-w-[1240px] flex-col gap-2 border-t border-[var(--footer-line)] px-6 py-5 text-sm text-[var(--footer-muted)] sm:flex-row sm:items-center sm:justify-between lg:px-10">
+        <p>{content.legalLine}</p>
+        <p className="tracking-[0.16em] text-[var(--footer-text)]/75">
+          {content.creditLine}
+        </p>
       </div>
     </footer>
   );
