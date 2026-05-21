@@ -1,5 +1,7 @@
+import { onScroll } from "animejs";
 import { useEffect, useMemo, useRef, useState, type RefObject } from "react";
 import type { IntroSequenceContent } from "../../data/moriMatchaShowcase";
+import { withAnimeScope } from "../../lib/animation/withAnimeScope";
 
 interface LogoScrollIntroProps {
   content: IntroSequenceContent;
@@ -25,7 +27,8 @@ export default function LogoScrollIntro({
   wordmarkTargetRef,
 }: LogoScrollIntroProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const rafId = useRef<number | null>(null);
+  const autoSnapDoneRef = useRef(false);
+  const rafIdRef = useRef<number | null>(null);
   const [progress, setProgress] = useState(0);
   const [viewport, setViewport] = useState({ width: 1440, height: 900 });
 
@@ -42,47 +45,113 @@ export default function LogoScrollIntro({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    const section = sectionRef.current;
+    if (!section) return;
 
-    const updateProgress = () => {
-      const section = sectionRef.current;
-      if (!section) return;
-
-      const rect = section.getBoundingClientRect();
-      const maxScrollableDistance = rect.height - window.innerHeight;
-      const nextProgress =
-        maxScrollableDistance <= 0
-          ? 1
-          : clamp(-rect.top / maxScrollableDistance, 0, 1);
-
-      setProgress(nextProgress);
+    const setProgressSafe = (nextValue: number) => {
+      const nextProgress = Number.isFinite(nextValue) ? clamp(nextValue, 0, 1) : 0;
+      setProgress((current) =>
+        Math.abs(current - nextProgress) < 0.0005 ? current : nextProgress
+      );
       onProgressChange?.(nextProgress);
     };
 
-    const onScrollOrResize = () => {
-      if (rafId.current !== null) {
-        window.cancelAnimationFrame(rafId.current);
-      }
+    const updateViewport = () => {
+      setViewport({ width: window.innerWidth, height: window.innerHeight });
+    };
 
-      rafId.current = window.requestAnimationFrame(() => {
-        setViewport({ width: window.innerWidth, height: window.innerHeight });
-        updateProgress();
+    const setupManualFallback = () => {
+      const updateProgress = () => {
+        const rect = section.getBoundingClientRect();
+        const maxScrollableDistance = rect.height - window.innerHeight;
+        const nextProgress =
+          maxScrollableDistance <= 0
+            ? 1
+            : -rect.top / maxScrollableDistance;
+
+        setProgressSafe(nextProgress);
+      };
+
+      const onScrollOrResize = () => {
+        if (rafIdRef.current !== null) {
+          window.cancelAnimationFrame(rafIdRef.current);
+        }
+
+        rafIdRef.current = window.requestAnimationFrame(() => {
+          updateViewport();
+          updateProgress();
+        });
+      };
+
+      onScrollOrResize();
+      window.addEventListener("scroll", onScrollOrResize, { passive: true });
+      window.addEventListener("resize", onScrollOrResize);
+
+      return () => {
+        if (rafIdRef.current !== null) {
+          window.cancelAnimationFrame(rafIdRef.current);
+        }
+        window.removeEventListener("scroll", onScrollOrResize);
+        window.removeEventListener("resize", onScrollOrResize);
+      };
+    };
+
+    updateViewport();
+
+    try {
+      return withAnimeScope(section, () => {
+        let observer: ReturnType<typeof onScroll>;
+        try {
+          observer = onScroll({
+            target: section,
+            sync: true,
+            enter: "top top",
+            leave: "bottom bottom",
+            onUpdate: (self) => {
+              setProgressSafe(self.progress);
+            },
+          });
+        } catch {
+          return setupManualFallback();
+        }
+
+        observer.refresh();
+        setProgressSafe(observer.progress);
+        window.addEventListener("resize", updateViewport);
+
+        return () => {
+          window.removeEventListener("resize", updateViewport);
+          observer.revert();
+        };
       });
-    };
-
-    setViewport({ width: window.innerWidth, height: window.innerHeight });
-    updateProgress();
-
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
-    window.addEventListener("resize", onScrollOrResize);
-
-    return () => {
-      if (rafId.current !== null) {
-        window.cancelAnimationFrame(rafId.current);
-      }
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-    };
+    } catch {
+      return setupManualFallback();
+    }
   }, [onProgressChange]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    if (progress <= 0.25) {
+      autoSnapDoneRef.current = false;
+      return;
+    }
+
+    if (progress < 0.9 || autoSnapDoneRef.current) return;
+
+    const section = sectionRef.current;
+    const nextSection = section?.nextElementSibling as HTMLElement | null;
+    if (!nextSection) return;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    autoSnapDoneRef.current = true;
+    nextSection.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start",
+    });
+  }, [progress]);
 
   const moveToNav = remap(progress, 0.5, 0.9);
   const handoffFade = 1 - remap(progress, 0.84, 0.98);

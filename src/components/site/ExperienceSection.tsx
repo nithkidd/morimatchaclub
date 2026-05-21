@@ -7,8 +7,8 @@ interface ExperienceSectionProps {
 
 export default function ExperienceSection({ content }: ExperienceSectionProps) {
   return (
-    <section className="mx-auto grid w-full max-w-[1240px] gap-6 px-6 pb-16 sm:gap-8 sm:pb-24 lg:grid-cols-[1.28fr_0.72fr] lg:items-start lg:px-10">
-      <ScrollReveal>
+    <section className="mx-auto grid min-h-[100svh] w-full max-w-[1240px] gap-6 px-6 py-16 sm:gap-8 sm:py-24 lg:grid-cols-[1.28fr_0.72fr] lg:items-center lg:px-10">
+      <ScrollReveal className="order-2 lg:order-1">
         <img
           src={content.mainImage.src}
           alt={content.mainImage.alt}
@@ -17,7 +17,7 @@ export default function ExperienceSection({ content }: ExperienceSectionProps) {
         />
       </ScrollReveal>
 
-      <div className="space-y-8">
+      <div className="order-1 space-y-8 lg:order-2">
         <ScrollReveal>
           <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand-500)]">{content.eyebrow}</p>
           <h2 className="mt-3 text-4xl font-semibold leading-[0.96] text-[var(--ink)] sm:text-5xl lg:text-6xl">

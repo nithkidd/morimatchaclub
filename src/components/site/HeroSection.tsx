@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section className="mx-auto grid w-full max-w-[1240px] gap-6 px-6 pb-16 pt-12 sm:gap-8 sm:pb-20 sm:pt-16 lg:grid-cols-[1fr_1.25fr] lg:px-10 lg:pt-24">
+    <section className="mx-auto grid min-h-[100svh] w-full max-w-[1240px] items-center gap-6 px-6 pb-16 pt-12 sm:gap-8 sm:pb-20 sm:pt-16 lg:grid-cols-[1fr_1.25fr] lg:px-10 lg:pt-24">
       <ScrollReveal className="flex flex-col justify-center">
         <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand-500)]">
           {content.eyebrow}

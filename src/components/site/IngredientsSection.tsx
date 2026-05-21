@@ -7,9 +7,9 @@ interface IngredientsSectionProps {
 
 export default function IngredientsSection({ content }: IngredientsSectionProps) {
   return (
-    <section id="process" className="mx-auto w-full max-w-[1240px] px-6 pb-16 sm:pb-24 lg:px-10">
+    <section id="process" className="mx-auto min-h-[100svh] w-full max-w-[1240px] px-6 py-16 sm:py-24 lg:px-10">
       <div className="grid items-start justify-between gap-6 lg:grid-cols-[1.2fr_0.5fr]">
-        <ScrollReveal>
+        <ScrollReveal className="order-2 lg:order-1">
           <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand-500)]">{content.eyebrow}</p>
           <h2 className="mt-3 max-w-4xl text-4xl font-semibold leading-[0.96] text-[var(--ink)] sm:text-5xl lg:text-6xl">
             {content.headline}
@@ -37,7 +37,7 @@ export default function IngredientsSection({ content }: IngredientsSectionProps)
           />
         </ScrollReveal>
 
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="order-1 grid gap-8 sm:grid-cols-2 lg:order-2">
           {content.features.map((feature, index) => (
             <ScrollReveal key={feature.title} delayMs={index * 90}>
               <article className="border-b border-[var(--line)] pb-7">

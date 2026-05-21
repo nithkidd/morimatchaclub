@@ -7,7 +7,7 @@ interface ContactBandSectionProps {
 
 export default function ContactBandSection({ content }: ContactBandSectionProps) {
   return (
-    <section className="soft-section-wash bg-[var(--surface-soft)] px-6 py-16 sm:py-24 lg:px-10">
+    <section className="soft-section-wash flex min-h-[100svh] items-center bg-[var(--surface-soft)] px-6 py-16 sm:py-24 lg:px-10">
       <div className="mx-auto w-full max-w-[1240px]">
         <ScrollReveal className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand-500)]">{content.eyebrow}</p>
@@ -26,8 +26,14 @@ export default function ContactBandSection({ content }: ContactBandSectionProps)
             ) : null}
             <div className="flex flex-wrap items-center justify-center gap-4 text-base font-medium text-[var(--ink)] sm:gap-5 sm:text-xl">
               {content.socials.map((social) => (
-                <a key={social} href="#" className="transition-colors hover:text-[var(--brand-700)]">
-                  {social}
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-[var(--brand-700)]"
+                >
+                  {social.label}
                 </a>
               ))}
             </div>

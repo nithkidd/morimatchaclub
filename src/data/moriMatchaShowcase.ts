@@ -52,6 +52,22 @@ export interface ExperienceContent {
   };
 }
 
+export interface OriginTrustItem {
+  title: string;
+  copy: string;
+}
+
+export interface OriginTrustContent {
+  eyebrow: string;
+  headline: string;
+  copy: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  points: OriginTrustItem[];
+}
+
 export interface IngredientFeature {
   title: string;
   copy: string;
@@ -75,7 +91,10 @@ export interface ContactBandContent {
   copy: string;
   ctaLabel: string;
   ctaHref: string;
-  socials: string[];
+  socials: Array<{
+    label: string;
+    href: string;
+  }>;
   image: {
     src: string;
     alt: string;
@@ -93,7 +112,7 @@ export interface BlogPostItem {
   title: string;
   category: string;
   date: string;
-  image: string;
+  video: string;
 }
 
 export interface BlogContent {
@@ -203,6 +222,30 @@ export const experienceContent: ExperienceContent = {
   },
 };
 
+export const originTrustContent: OriginTrustContent = {
+  eyebrow: "Origin transparency",
+  headline: "From China, selected with strict quality standards.",
+  copy: "Yes, our matcha is sourced from China. We are transparent about that. Instead of hype, we focus on consistent taste, clean aroma, and reliable quality from every batch we choose.",
+  image: {
+    src: "/EXPERIENCE/experience2.jpg",
+    alt: "Premium matcha powder texture and whisking setup",
+  },
+  points: [
+    {
+      title: "Transparent origin labeling",
+      copy: "We clearly label our matcha as sourced from China and focus on selecting batches that meet our quality expectations.",
+    },
+    {
+      title: "Selection by cup quality",
+      copy: "We prioritize taste, color, aroma, and smooth finish, so customers judge by experience, not assumptions.",
+    },
+    {
+      title: "Consistency you can trust",
+      copy: "Our goal is simple: a clean profile with low bitterness and dependable daily drinking quality.",
+    },
+  ],
+};
+
 export const ingredientsContent: IngredientsContent = {
   eyebrow: "Our process",
   headline: "Meet the essentials behind every ceromonial cup",
@@ -238,7 +281,20 @@ export const contactBandContent: ContactBandContent = {
   copy: "Questions about whisking, ratios, or flavor profile? We are here to guide your ceromonial matcha journey.",
   ctaLabel: "",
   ctaHref: "#order",
-  socials: ["Facebook", "Instagram", "TikTok"],
+  socials: [
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61585484391973",
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/morimatcha.club/",
+    },
+    {
+      label: "TikTok",
+      href: "https://www.tiktok.com/@morimatchaclub",
+    },
+  ],
   image: {
     src: "/GETINTOUCH/getintouch1.png",
     alt: "Three iced matcha drinks in light setting",
@@ -278,24 +334,22 @@ export const quoteItems: QuoteItem[] = [
 ];
 
 export const blogContent: BlogContent = {
-  eyebrow: "Our blog",
-  headline: "News & articles",
-  ctaLabel: "Browse all articles",
+  eyebrow: "Our shorts",
+  headline: "Latest video moments",
+  ctaLabel: "",
   ctaHref: "#",
   posts: [
     {
-      title: "Ceromonial matcha benefits for clarity and steady energy",
-      category: "News",
-      date: "May 15, 2026",
-      image:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1400&q=80",
+      title: "Mori Matcha Club Shorts 01",
+      category: "Shorts",
+      date: "May 2026",
+      video: "/BLOG/vdo1.mp4",
     },
     {
-      title: "Simple steps to whisk brighter and smoother ceromonial matcha",
-      category: "Guides",
-      date: "May 10, 2026",
-      image:
-        "https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=1400&q=80",
+      title: "Mori Matcha Club Shorts 02",
+      category: "Shorts",
+      date: "May 2026",
+      video: "/BLOG/vdo2.mp4",
     },
   ],
 };

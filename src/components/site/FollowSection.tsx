@@ -11,7 +11,9 @@ export default function FollowSection({ content }: FollowSectionProps) {
   return (
     <section
       className={`mx-auto w-full max-w-[1240px] gap-6 px-6 pb-16 sm:pb-24 lg:px-10${
-        hasGallery ? " grid lg:grid-cols-[1.2fr_1.8fr]" : ""
+        hasGallery
+          ? " grid min-h-[100svh] items-center py-16 sm:py-24 lg:grid-cols-[1.2fr_1.8fr]"
+          : " min-h-[100svh] py-16 sm:py-24"
       }`}
     >
       <ScrollReveal className="self-start lg:sticky lg:top-24">

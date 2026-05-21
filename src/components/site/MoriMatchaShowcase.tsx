@@ -6,6 +6,7 @@ import ExperienceSection from "./ExperienceSection";
 import FollowSection from "./FollowSection";
 import HeroSection from "./HeroSection";
 import IngredientsSection from "./IngredientsSection";
+import OriginTrustSection from "./OriginTrustSection";
 import PremiumFooter from "./PremiumFooter";
 import TestimonialRailSection from "./TestimonialRailSection";
 import TopNavbar from "./TopNavbar";
@@ -19,6 +20,7 @@ import {
   heroContent,
   ingredientsContent,
   introSequenceContent,
+  originTrustContent,
   quoteItems,
   whyUsContent,
 } from "../../data/moriMatchaShowcase";
@@ -28,7 +30,7 @@ export default function MoriMatchaShowcase() {
   const navbarLogoRef = useRef<HTMLImageElement | null>(null);
   const navbarWordmarkRef = useRef<HTMLParagraphElement | null>(null);
   const showProcessSection = false;
-  const showBlogSection = false;
+  const showBlogSection = true;
 
   return (
     <main className="bg-[var(--bg)] text-[var(--ink)]">
@@ -48,6 +50,7 @@ export default function MoriMatchaShowcase() {
 
       <HeroSection content={heroContent} />
       <WhyUsSection content={whyUsContent} />
+      <OriginTrustSection content={originTrustContent} />
       <ExperienceSection content={experienceContent} />
       {showProcessSection ? (
         <IngredientsSection content={ingredientsContent} />

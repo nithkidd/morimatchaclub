@@ -10,7 +10,7 @@ export default function WhyUsSection({ content }: WhyUsSectionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section id="why-us" className="mx-auto w-full max-w-[1240px] px-6 pb-16 sm:pb-24 lg:px-10">
+    <section id="why-us" className="mx-auto min-h-[100svh] w-full max-w-[1240px] px-6 py-16 sm:py-24 lg:px-10">
       <ScrollReveal className="mx-auto max-w-4xl text-center">
         <p className="text-xs uppercase tracking-[0.22em] text-[var(--brand-500)]">{content.eyebrow}</p>
         <h2 className="mt-4 text-4xl font-semibold leading-[0.97] text-[var(--ink)] sm:text-5xl lg:text-7xl">
@@ -20,7 +20,7 @@ export default function WhyUsSection({ content }: WhyUsSectionProps) {
       </ScrollReveal>
 
       <div className="mt-10 grid gap-8 sm:mt-14 sm:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-        <ScrollReveal>
+        <ScrollReveal className="order-2 lg:order-1">
           <img
             src={content.image.src}
             alt={content.image.alt}
@@ -29,7 +29,7 @@ export default function WhyUsSection({ content }: WhyUsSectionProps) {
           />
         </ScrollReveal>
 
-        <div className="border-t border-[var(--line)]">
+        <div className="order-1 border-t border-[var(--line)] lg:order-2">
           {content.items.map((item, index) => {
             const open = activeIndex === index;
             return (
