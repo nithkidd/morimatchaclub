@@ -20,7 +20,7 @@ export default function WhyUsSection({ content }: WhyUsSectionProps) {
       </ScrollReveal>
 
       <div className="mt-10 grid gap-8 sm:mt-14 sm:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-        <ScrollReveal className="order-2 lg:order-1">
+        <ScrollReveal>
           <img
             src={content.image.src}
             alt={content.image.alt}
@@ -29,7 +29,7 @@ export default function WhyUsSection({ content }: WhyUsSectionProps) {
           />
         </ScrollReveal>
 
-        <div className="order-1 border-t border-[var(--line)] lg:order-2">
+        <div className="border-t border-[var(--line)]">
           {content.items.map((item, index) => {
             const open = activeIndex === index;
             return (

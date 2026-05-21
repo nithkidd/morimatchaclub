@@ -9,7 +9,7 @@ export default function OriginTrustSection({ content }: OriginTrustSectionProps)
   return (
     <section className="mx-auto w-full max-w-[1240px] px-6 py-16 sm:py-24 lg:px-10">
       <div className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
-        <ScrollReveal className="order-2 self-start lg:order-1 lg:sticky lg:top-24">
+        <ScrollReveal className="order-2 hidden self-start lg:order-1 lg:sticky lg:top-24 lg:block">
           <img
             src={content.image.src}
             alt={content.image.alt}
@@ -25,6 +25,15 @@ export default function OriginTrustSection({ content }: OriginTrustSectionProps)
               {content.headline}
             </h2>
             <p className="mt-4 text-lg leading-8 text-[var(--ink-soft)] sm:mt-5 sm:text-2xl sm:leading-10">{content.copy}</p>
+          </ScrollReveal>
+
+          <ScrollReveal delayMs={60} className="mt-8 lg:hidden">
+            <img
+              src={content.image.src}
+              alt={content.image.alt}
+              className="motion-image h-[320px] w-full object-cover sm:h-[520px]"
+              loading="lazy"
+            />
           </ScrollReveal>
 
           <div className="mt-8 border-t border-[var(--line)]">

@@ -146,7 +146,6 @@ export interface FooterContent {
   contact: {
     email: string;
     phone: string;
-    telegram: string;
     address?: string;
   };
   socialLinks: Array<{
@@ -173,7 +172,7 @@ export const heroContent: HeroContent = {
   headline: "Purposefully crafted matcha for calm, clean focus.",
   copy: "Mori Matcha Club serves one product only: premium ceromonial matcha designed for daily ritual and uncompromised quality.",
   ctaLabel: "Order Now",
-  ctaHref: "https://t.me/cattchiro",
+  ctaHref: "https://www.instagram.com/morimatcha.club/",
   heroImage: {
     src: "/HERO/hero1.jpg",
     alt: "Freshly whisked matcha in bowl",
@@ -380,7 +379,6 @@ export const footerContent: FooterContent = {
   contact: {
     email: "morimatchaclub@gmail.com",
     phone: "+855 71 995 272 5",
-    telegram: "@cattchiro",
   },
   socialLinks: [
     {

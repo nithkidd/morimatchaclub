@@ -93,16 +93,6 @@ export default function PremiumFooter({ content }: PremiumFooterProps) {
           <ul className="mt-4 space-y-3 text-lg text-[var(--footer-muted)] sm:text-xl">
             <li>{content.contact.email}</li>
             <li>{content.contact.phone}</li>
-            <li>
-              <a
-                href={`https://t.me/${content.contact.telegram.replace("@", "")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="transition-colors hover:text-[var(--footer-text)]"
-              >
-                Telegram {content.contact.telegram}
-              </a>
-            </li>
             {content.contact.address ? (
               <li>{content.contact.address}</li>
             ) : null}

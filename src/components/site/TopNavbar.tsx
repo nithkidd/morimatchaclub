@@ -69,7 +69,7 @@ export default function TopNavbar({
           ) : null}
           <a
             id="order"
-            href="https://t.me/cattchiro"
+            href="https://www.instagram.com/morimatcha.club/"
             target="_blank"
             rel="noreferrer"
             className="brand-cta bg-[var(--brand-500)] px-4 py-2 font-medium text-white hover:bg-[var(--brand-700)]"

@@ -216,7 +216,7 @@ export default function LogoScrollIntro({
               transform: `translate(-50%, -50%) translate3d(${nameMoveX}px, ${nameMoveY}px, 0) scale(${nameScale})`,
             }}
           >
-            <p className="brand-logo whitespace-nowrap text-center text-[clamp(1.6rem,8.2vw,4.5rem)] uppercase tracking-[0.14em] text-[var(--intro-text)] md:tracking-[0.18em]">
+            <p className="brand-logo w-[min(92vw,980px)] px-2 text-center text-[clamp(1rem,8.6vw,1.85rem)] uppercase leading-[1.08] tracking-[0.06em] text-[var(--intro-text)] sm:text-[clamp(1.25rem,6.8vw,2.7rem)] sm:tracking-[0.1em] lg:whitespace-nowrap lg:text-[clamp(1.8rem,4.8vw,4.5rem)] lg:tracking-[0.16em]">
               {content.brandWordmark}
             </p>
             <p className="mt-2 text-center text-[10px] uppercase tracking-[0.2em] text-[var(--intro-muted)] sm:text-xs md:text-sm md:tracking-[0.24em]">
