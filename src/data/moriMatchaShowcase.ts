@@ -396,5 +396,5 @@ export const footerContent: FooterContent = {
     },
   ],
   legalLine: "Copyright 2026 Mori Matcha Club. All rights reserved.",
-  creditLine: "Powered By SAYANA",
+  creditLine: "Designed By SAYANA",
 };
