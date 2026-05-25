@@ -160,7 +160,7 @@ export const introSequenceContent: IntroSequenceContent = {
   logoSrc: "/LOGO/morimatchalogo-mark.png",
   logoAlt: "Mori Matcha Club logo",
   brandWordmark: "MORI MATCHA CLUB",
-  tagline: "Ceremonial Matcha",
+  tagline: "Your New Everyday Ritual",
   lines: [
     "One craft. One grade. One ritual.",
     "Shade-grown leaves, stone-milled in small batches.",
@@ -169,9 +169,9 @@ export const introSequenceContent: IntroSequenceContent = {
 };
 
 export const heroContent: HeroContent = {
-  eyebrow: "Ceremonial Matcha Only",
+  eyebrow: "Daily Matcha",
   headline: "Purposefully crafted matcha for calm, clean focus.",
-  copy: "Mori Matcha Club serves one product only: premium ceremonial matcha designed for daily ritual and uncompromised quality.",
+  copy: "Mori Matcha Club offers one thing only: premium ceremonial matcha for daily ritual and uncompromising quality.",
   ctaLabel: "Order Now",
   ctaHref: "https://www.instagram.com/morimatcha.club/",
   heroImage: {
@@ -183,7 +183,7 @@ export const heroContent: HeroContent = {
 export const whyUsContent: WhyUsContent = {
   eyebrow: "Why us?",
   headline: "What makes us different from the rest",
-  copy: "Everything is built around ceremonial grade discipline: source, mill, freshness, and serving ritual.",
+  copy: "Everything is built around obsessive discipline: sourcing, milling, freshness, and ritual.",
   image: {
     src: "/WHYUS/whyus1.jpg",
     alt: "Bamboo whisk preparing bright green matcha",
@@ -303,33 +303,33 @@ export const contactBandContent: ContactBandContent = {
 
 export const quoteItems: QuoteItem[] = [
   {
-    quote: "So much smoother than coffee. I never crash after lunch anymore.",
-    name: "Lilly Woods",
-    handle: "@lillywoods",
+    quote: "A very nice matcha for that price! Bright green in color, with a fresh matcha aroma, and no bitterness.",
+    name: "",
+    handle: "@muyhor",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
+      "",
   },
   {
     quote:
-      "Clean energy, calm mood, and no bitterness. This is my morning staple.",
-    name: "John Carter",
-    handle: "@johncarter",
+      "The matcha is good. the packaging is good",
+    name: "",
+    handle: "@vattey",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
+      "",
   },
   {
-    quote: "Ceremonial quality is obvious from color, aroma, and texture.",
-    name: "Nika Sato",
-    handle: "@nikasato",
+    quote: "It is too good",
+    name: "",
+    handle: "@sonida",
     avatar:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80",
+      "",
   },
   {
-    quote: "I only buy one matcha now. Mori made the decision easy.",
-    name: "Daniel Rhee",
-    handle: "@danielrhee",
+    quote: "Matcha ng taste so good, the color, fragrance, and the packaging is sooo premium. I love it😍😍😍 the best mg",
+    name: "",
+    handle: "@savinna",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+      "",
   },
 ];
 
