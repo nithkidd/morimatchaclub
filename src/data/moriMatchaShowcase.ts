@@ -318,13 +318,6 @@ export const quoteItems: QuoteItem[] = [
       "",
   },
   {
-    quote: "It is too good",
-    name: "",
-    handle: "@sonida",
-    avatar:
-      "",
-  },
-  {
     quote: "Matcha ng taste so good, the color, fragrance, and the packaging is sooo premium. I love it😍😍😍 the best mg",
     name: "",
     handle: "@savinna",
